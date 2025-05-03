@@ -7,7 +7,7 @@
 
 .mascara-form {
     visibility: hidden;
-    transition: visibility 1s linear;
+    transition: visibility 0.3s linear;
     z-index: 3;
     position: fixed;
     width: 100vw;
@@ -19,6 +19,8 @@ header {
     display: flex;
     align-items: center;
     gap: 30px;
+    padding: 20px;
+    background: transparent;
 }
 
 header a {
@@ -35,14 +37,14 @@ header a:hover {
 
 .logo-header {
     height: 80px;
-    margin: 20px;
 }
 
 .container {
     display: flex;
-    height: 100vh;
+    height: calc(100vh - 120px);
     align-items: center;
     justify-content: space-evenly;
+    position: relative;
 }
 
 .background {
@@ -53,10 +55,9 @@ header a:hover {
 }
 
 .conteudo-background {
-    height: auto;
-    width: auto;
-    min-width: 100%;
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: fixed;
     top: 0;
 }
@@ -88,19 +89,23 @@ button {
 
 .logo {
     height: 200px;
+    width: auto;
 }
 
 .mario {
     height: 60%;
+    max-width: 100%;
 }
 
 p {
     color: white;
     font-size: 20px;
+    margin: 15px 0;
 }
 
 .sobre-nos {
     max-width: 40%;
+    text-align: left;
 }
 
 .fale-conosco {
@@ -112,8 +117,16 @@ p {
     border-radius: 10px;
     gap: 20px;
     left: -330px;
-    transition: left 1s linear;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 330px;
+    transition: left 0.5s ease;
     z-index: 4;
+}
+
+.fale-conosco.active {
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 input {
@@ -126,12 +139,11 @@ input {
 
 textarea {
     height: 80px;
-    width: 300px;
+    width: 100%;
     border-radius: 5px;
     border: 1px solid gray;
-    padding-left: 10px;
-    outline-color: #18D80F;
     padding: 10px;
+    outline-color: #18D80F;
 }
 
 .whatsapp {
@@ -168,53 +180,51 @@ footer a:hover {
     text-decoration: underline;
 }
 
-@media (max-width: 1000px) {
-    p {
-        display: none;
-    }
-
-    .caixa-mae {
+/* Media Queries para Tablets */
+@media (max-width: 1024px) {
+    .container {
         flex-direction: column;
-        padding: 10px;
-    }
-
-    .caixa-principal {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .imagem-mario-luigi {
-        max-width: 80vw;
-        height: auto;
-    }
-
-    .header {
-        margin: 20px;
         justify-content: center;
+        padding: 20px;
     }
 
-    .header img {
-        display: none;
+    .sobre-nos {
+        max-width: 80%;
+        text-align: center;
     }
 
-    .header a {
-        font-size: 18px;
+    .logo {
+        height: 180px;
+    }
+
+    .mario {
+        height: 50%;
+        max-height: 300px;
+    }
+
+    header {
+        gap: 20px;
+    }
+
+    header a {
+        font-size: 22px;
+    }
+
+    .fale-conosco {
+        width: 300px;
     }
 }
 
+/* Media Queries para Celulares */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        padding: 10px;
+        gap: 15px;
+        padding: 15px;
     }
 
     header .logo-header {
         height: 60px;
-        margin: 10px;
     }
 
     header a {
@@ -222,43 +232,42 @@ footer a:hover {
     }
 
     .container {
-        flex-direction: column;
-        justify-content: center;
         padding: 15px;
     }
 
     .sobre-nos {
         max-width: 90%;
-        text-align: center;
     }
 
     .sobre-nos .logo {
         height: 150px;
-        max-width: 100%;
     }
 
     .sobre-nos p {
         font-size: 16px;
-        display: block;
     }
 
     button {
         width: 150px;
         height: 40px;
-        margin-top: 20px;
+        font-size: 14px;
     }
 
     .mario {
         height: 40%;
         max-height: 200px;
-        max-width: 100%;
     }
 
     .fale-conosco {
-        width: 80%;
+        width: 90%;
         max-width: 300px;
-        left: -100%;
         padding: 15px;
+        left: -100%;
+    }
+
+    .fale-conosco.active {
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     input {
@@ -267,7 +276,6 @@ footer a:hover {
     }
 
     textarea {
-        width: 100%;
         height: 70px;
         font-size: 14px;
     }
@@ -279,9 +287,9 @@ footer a:hover {
     footer p {
         font-size: 14px;
     }
-
 }
 
+/* Media Queries para Celulares Menores */
 @media (max-width: 480px) {
     header .logo-header {
         height: 50px;
@@ -311,9 +319,15 @@ footer a:hover {
     }
 
     .fale-conosco {
-        width: 90%;
+        width: 95%;
         max-width: 280px;
         padding: 10px;
+        left: -100%;
+    }
+
+    .fale-conosco.active {
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     input {
@@ -333,5 +347,4 @@ footer a:hover {
     footer p {
         font-size: 12px;
     }
-
 }
