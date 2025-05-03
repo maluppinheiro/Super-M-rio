@@ -226,23 +226,23 @@ footer a:hover {
 /* Media Queries para Celulares */
 @media (max-width: 768px) {
     header {
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: flex;
+        align-items: center;
         justify-content: flex-start;
-        align-items: flex-start;
         padding: 15px;
     }
 
     header .logo-header {
         height: 60px;
-        margin: 0;
+        margin-top: -5px;
+        padding-left: 15px;
+        padding-right: 10px;
     }
 
     header nav {
         display: flex;
-        justify-content: center;
-        width: 100%;
-        margin-top: 20px;
+        align-items: center;
+        margin-left: auto;
         gap: 15px;
     }
 
@@ -322,11 +322,14 @@ footer a:hover {
 @media (max-width: 480px) {
     header .logo-header {
         height: 50px;
+        margin-top: -5px;
+        padding-left: 10px;
+        padding-right: 5px;
     }
 
     header nav {
         gap: 10px;
-        margin-top: 15px;
+        margin-left: auto;
     }
 
     header a {
