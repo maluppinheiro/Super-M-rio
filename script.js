@@ -1,15 +1,12 @@
-
 const form = document.querySelector('.fale-conosco');
 const background = document.querySelector('.mascara-form');
 
 function showForm() {
-    form.style.left = '50%';
-    form.style.transform = 'translate(-50%, -50%)';
+    form.classList.add('active');
     background.style.visibility = 'visible';
 }
 
 function hideForm() {
-    form.style.left = '-100%';
-    form.style.transform = 'translateY(-50%)';
+    form.classList.remove('active');
     background.style.visibility = 'hidden';
 }
