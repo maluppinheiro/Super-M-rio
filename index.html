@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -11,7 +10,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./icon/favicon-16x16.png">
-    <script src="./"></script>
     <link rel="manifest" href="./icon/site.webmanifest">
     <link rel="stylesheet" href="style.css">
     <title>Mario Encanador</title>
@@ -31,7 +29,6 @@
         <div class="background">
             <video loop autoplay muted playsinline class="conteudo-background">
                 <source src="./assets/video (2).mp4" type="video/mp4">
-                <!-- Adicione um fallback se necessário -->
                 <p>Seu navegador não suporta vídeo.</p>
             </video>
             <div class="mascara-video"></div>
@@ -58,7 +55,7 @@
         <form action="https://formsubmit.co/luisanogueirapp@gmail.com" method="POST" class="fale-conosco">
             <input type="text" name="name" placeholder="Seu Nome" required>
             <input type="email" name="email" placeholder="E-mail" required>
-            <textarea type="text" placeholder="Digite seu problema"></textarea>
+            <textarea placeholder="Digite seu problema"></textarea>
             <button type="submit">Pedir Orçamento</button>
         </form>
     </div>
@@ -68,22 +65,8 @@
         <p>Desenvolvido por <a href="https://malupinheiro.netlify.app/" target="_blank"
                 aria-label="Site de Malu Pinheiro">Malu Pinheiro</a></p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
-<script>
-    const form = document.querySelector('.fale-conosco')
-    const background = document.querySelector('.mascara-form')
-
-    function showForm() {
-        form.style.left = '50%'
-        form.style.transform = 'translateX(-50%)'
-        background.style.visibility = 'visible'
-    }
-
-    function hideForm() {
-        form.style.left = '-330px'
-        form.style.transform = 'translateX(0)'
-        background.style.visibility = 'hidden'
-    }
-</script>
 
 </html>
